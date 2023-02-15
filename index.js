@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 
-import {getData,} from "./src/functions.js";
+import {getData,addData, deleteData} from "./src/functions.js";
 
 const app = express();
 app.use(express.json());
@@ -14,6 +14,9 @@ app.get("/", (req,res)=>{
  });
 
 app.get("/get",getData);
+app.post("/post",addData);
+app.delete("/delete/:docId",deleteData)
+
 
 
 
